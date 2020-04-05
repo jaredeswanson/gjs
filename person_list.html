@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8" />
+		<style>
+			body {
+				background-color: black;
+			}
+			#frame {
+				width: 70%;
+				margin: auto;
+			}
+			a {
+				display: block;
+				padding: 0.5em;
+				color: white;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+	  <div id="frame">
+		<div id="name_list"></div>
+	  </div>
+
+		<script>
+		  [{name:"Bill",born:"4 January 2010", died: "5 January 2020"},
+		   {name:"Ted", born:"3 April 1964", died: "13 August 2019"},
+		   {name:"Julie", born:"14 February 1924", died: "5 September 2012"},
+		   {name:"Jan", born:"29 June 1934", died: "18 February 2020"}].reduce((acc, person) => {
+			  let a = document.createElement("a");
+			  a.href = "form.html?" + person.name;
+			  a.innerText = person.name + " - Born: " + person.born + ", Died: " + person.died;
+			  acc.appendChild(a);
+			  return acc;
+		  }, document.getElementById("name_list"));
+		</script>
+	</body>
+</html>

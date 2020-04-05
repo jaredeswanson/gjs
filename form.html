@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<style>
+	  body {
+		  background-color: black;
+		  color: white;
+	  }
+	  #frame {
+		  width: 70%;
+		  margin: auto;
+	  }
+	  label {
+		  font-weight: bold;
+	  }
+	  textarea {
+		  height: 5em;
+		  width: 100%;
+	  }
+	  #posts > div {
+		  padding: 2em 0;
+	  }
+	  #submit_button {
+		  margin-top: 1em;
+	  }
+	</style>
+  </head>
+  <body>
+	<div id="frame">
+		<h1 id="header"></h1>
+
+		<div id="posts"></div>
+		<label for="msg">Create a new post:</label>
+		<div>
+			<textarea id="msg"></textarea>
+			<input id="submit_button" type="button" value="Submit"></input>
+		</div>
+	</div>
+
+	<script>
+	  let name = window.location.search.substr(1);
+	  document.getElementById("header").innerText = name;
+
+	  ["Some person's post about " + name + " 1",
+	   "Some person's post about " + name + " 2",
+	   "Some person's post about " + name + " 3"].reduce((acc, post_text) => {
+		  let post = document.createElement("div");
+		  post.innerText = post_text;
+		  acc.appendChild(post);
+		  acc.appendChild(document.createElement("hr"));
+		  return acc;
+	  }, document.getElementById("posts"));
+
+	  
+	</script>
+  </body>
+</html

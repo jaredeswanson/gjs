@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8" />
+	</head>
+	<body>
+	  <div id="name_list"></div>
+
+		<script>
+		  ["Bill", "Ted", "Julie", "Jan"].reduce(acc, name => {
+			  let a = document.createElement("a");
+			  a.href = "form.html?" + name;
+			  a.innerText = name;
+			  acc.appendChild(a);
+		  }, document.getElementById("name_list"));
+
+		</script>
+	</body>
+</html>

@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
+	<style>
+		body {
+			background-color: black;
+		}
+		#flag_container {
+			text-align: center;
+		}
+		.flag {
+			height: 30px;
+			margin: 10px;
+		}
+		.flag:hover {
+			cursor: pointer;
+		}
+		#planet_container {
+			height: 50%;
+			margin: auto;
+		}
+		#planet {
+			display: block;
+			margin: auto;
+		}
+		</style>
 </head>
 <body>
-  <h1>hello world</h1>
-  <!--<img src="mars_image.jpg" />-->
-  <p>hi</p>
+	<h1>Title??</h1>
+	<div id="planet_container">
+		<img id="planet" src="mars_image.jpg" />
+	</div>
+	<hr />
+
+	<div id="flag_container"></div>
+	
+	<script>
+	  for(let i = 0; i < 180; i++) {
+		let flag_image = document.createElement('img');
+		let flag_link = document.createElement("a");
+		flag_link.appendChild(flag_image);
+		flag_image.src = "flag.jpg";
+		flag_image.classList = "flag";
+		flag_link.href = "person_list.html";
+		document.getElementById("flag_container").appendChild(flag_link);
+	  }
+	</script>
 </body>
 </html>
